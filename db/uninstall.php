@@ -17,7 +17,7 @@
 /**
  * Code that is executed before the tables and data are dropped during the plugin uninstallation.
  *
- * @package     qbehaviour_group
+ * @package     qbehaviour_deferredgroup
  * @category    upgrade
  * @copyright   2017 Dr Bean <drbean@cpan.org>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Custom uninstallation procedure.
  */
-function xmldb_qbehaviour_group_uninstall() {
+function xmldb_qbehaviour_deferredgroup_uninstall() {
 
     return true;
 }

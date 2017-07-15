@@ -17,7 +17,7 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     qbehaviour_group
+ * @package     qbehaviour_deferredgroup
  * @category    string
  * @copyright   2017 Dr Bean <drbean@cpan.org>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

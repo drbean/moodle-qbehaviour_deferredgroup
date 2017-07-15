@@ -17,7 +17,7 @@
 /**
  * Plugin administration pages are defined here.
  *
- * @package     qbehaviour_group
+ * @package     qbehaviour_deferredgroup
  * @category    admin
  * @copyright   2017 Dr Bean <drbean@cpan.org>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
