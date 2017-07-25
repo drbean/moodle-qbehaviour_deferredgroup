@@ -43,4 +43,24 @@ require_once(__DIR__ . '/../deferredfeedback/behaviour.php');
 class qbehaviour_deferredgroup extends qbehaviour_deferredfeedback {
 
     const IS_ARCHETYPAL = true;
+
+    /*
+     * question_attempt is needed to find group to grade group response
+     */
+    public function process_finish(question_attempt_pending_step $pendingstep) {
+            if ($this->qa->get_state()->is_finished()) {
+	                return question_attempt::DISCARD;
+	            }
+
+            $response = $this->qa->get_last_step()->get_qt_data();
+            if (!$this->question->is_gradable_response($response)) {
+	                $pendingstep->set_state(question_state::$gaveup);
+	            } else {
+		                list($fraction, $state) = $this->question->grade_response($this->qa, $response);
+		                $pendingstep->set_fraction($fraction);
+		                $pendingstep->set_state($state);
+		            }
+            $pendingstep->set_new_response_summary($this->question->summarise_response($response));
+            return question_attempt::KEEP;
+        }
 }
