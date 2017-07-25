@@ -56,7 +56,7 @@ class qbehaviour_deferredgroup extends qbehaviour_deferredfeedback {
             if (!$this->question->is_gradable_response($response)) {
 	                $pendingstep->set_state(question_state::$gaveup);
 	            } else {
-		                list($fraction, $state) = $this->question->grade_response($this->qa, $response);
+		                list($fraction, $state) = $this->question->grade_response_group($this->qa, $response);
 		                $pendingstep->set_fraction($fraction);
 		                $pendingstep->set_state($state);
 		            }
