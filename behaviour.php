@@ -40,7 +40,7 @@ require_once(__DIR__ . '/../deferredfeedback/behaviour.php');
  * @copyright  2017 Dr Bean
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class qbehaviour_deferredgroup extends qbehaviour_deferredfeedback {
+class qbehaviour_deferredfeedbackgroup extends qbehaviour_deferredfeedback {
 
     const IS_ARCHETYPAL = true;
 
@@ -49,17 +49,17 @@ class qbehaviour_deferredgroup extends qbehaviour_deferredfeedback {
      */
     public function process_finish(question_attempt_pending_step $pendingstep) {
             if ($this->qa->get_state()->is_finished()) {
-	                return question_attempt::DISCARD;
-	            }
+                return question_attempt::DISCARD;
+            }
 
             $response = $this->qa->get_last_step()->get_qt_data();
             if (!$this->question->is_gradable_response($response)) {
-	                $pendingstep->set_state(question_state::$gaveup);
-	            } else {
-		                list($fraction, $state) = $this->question->grade_response_group($this->qa, $response);
-		                $pendingstep->set_fraction($fraction);
-		                $pendingstep->set_state($state);
-		            }
+                $pendingstep->set_state(question_state::$gaveup);
+            } else {
+                list($fraction, $state) = $this->question->grade_response_group($this->qa, $response);
+                $pendingstep->set_fraction($fraction);
+                $pendingstep->set_state($state);
+            }
             $pendingstep->set_new_response_summary($this->question->summarise_response($response));
             return question_attempt::KEEP;
         }
