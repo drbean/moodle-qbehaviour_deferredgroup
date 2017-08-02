@@ -37,5 +37,5 @@ require_once(__DIR__ . '/../deferredfeedback/renderer.php');
  * @copyright  2009 The Open University
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class qbehaviour_deferredfeedbackgroup_renderer extends qbehaviour_feedback_renderer {
+class qbehaviour_deferredfeedbackgroup_renderer extends qbehaviour_deferredfeedback_renderer {
 }
