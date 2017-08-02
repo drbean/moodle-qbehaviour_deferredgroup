@@ -25,4 +25,4 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'group';
+$string['pluginname'] = 'Deferred feedback for group';
