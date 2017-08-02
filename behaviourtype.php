@@ -25,6 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once(__DIR__ . '/../deferredfeedback/behaviourtype.php');
 
 /**
  * Question behaviour type information for deferred feedback group behaviour.
