@@ -26,6 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'qbehaviour_deferredfeedbackgroup';
 $plugin->release = '0.1.0';
-$plugin->version = 2017080200;
+$plugin->version = 2017080201;
 $plugin->requires = 2017051500;
 $plugin->maturity = MATURITY_ALPHA;
